@@ -6,10 +6,10 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'taiga-contrib-google-auth',
-    version = ":versiontools:taiga_contrib_github_auth:",
-    description = "The Taiga plugin for github authentication",
+    version = ":versiontools:taiga_contrib_google_auth:",
+    description = "The Taiga plugin for google authentication",
     long_description = "",
-    keywords = 'taiga, github, auth, plugin',
+    keywords = 'taiga, google, auth, plugin',
     author = 'HanWool Lee',
     author_email = 'kudnya@gmail.com',
     url = 'https://github.com/seyriz/taiga-contrib-google-auth',
@@ -22,7 +22,7 @@ setup(
     ],
     classifiers = [
         "Programming Language :: Python",
-        'Development Status :: 1 - Beta',
+        'Development Status :: 3 - Alpha',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Affero General Public License v3',

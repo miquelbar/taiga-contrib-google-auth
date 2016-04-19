@@ -12,7 +12,7 @@ Installation
 
 #### Taiga Back
 
-In your Taiga back python virtualenv install the pip package `taiga-contrib-github-auth` with:
+In your Taiga back python virtualenv install the pip package `taiga-contrib-google-auth` with:
 
 ```bash
   pip install taiga-contrib-github-auth
@@ -21,32 +21,34 @@ In your Taiga back python virtualenv install the pip package `taiga-contrib-gith
 Modify your `settings/local.py` and include the line:
 
 ```python
-  INSTALLED_APPS += ["taiga_contrib_github_auth"]
+  INSTALLED_APPS += ["taiga-contrib-google-auth"]
 
-  # Get these from https://github.com/settings/developers
-  GITHUB_API_CLIENT_ID = "YOUR-GITHUB-CLIENT-ID"
-  GITHUB_API_CLIENT_SECRET = "YOUR-GITHUB-CLIENT-SECRET"
+  # Get these from https://console.cloud.google.com/apis/credentials
+  CLIENT_ID = "GOOGLE_API_CLIENT_ID"
+  CLIENT_SECRET = "GOOGLE_API_CLIENT_SECRET"
+  REDIRECT_URI = "GOOGLE_API_REDIRECT_URI"
+  RESTRICT_LOGIN = "GOOGLE_RESTRICT_LOGIN"
+  ALLOW_DOMAIN = "GOOGLE_API_ALLOW_DOMAIN"
 ```
 
 #### Taiga Front
 
-Download in your `dist/plugins/` directory of Taiga front the `taiga-contrib-github-auth` compiled code (you need subversion in your system):
+Download in your `dist/plugins/` directory of Taiga front the `taiga-contrib-google-auth` compiled code (you need subversion in your system):
 
 ```bash
   cd dist/
   mkdir -p plugins
   cd plugins
-  svn export "https://github.com/taigaio/taiga-contrib-github-auth/tags/$(pip show taiga-contrib-github-auth | awk '/^Version: /{print $2}')/front/dist"  "github-auth"
+  svn export "https://github.com/seyriz/taiga-contrib-google-auth/tags/$(pip show taiga-contrib-google-auth | awk '/^Version: /{print $2}')/front/dist"  "google-auth"
 ```
 
-Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/github-auth/github-auth.json"`:
+Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/google-auth/google-auth.json"`:
 
 ```json
 ...
-    "gitHubClientId": "YOUR-GITHUB-CLIENT-ID",
     "contribPlugins": [
         (...)
-        "/plugins/github-auth/github-auth.json"
+        "/plugins/google-auth/google-auth.json"
     ]
 ...
 ```
@@ -58,7 +60,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 Clone the repo and
 
 ```bash
-  cd taiga-contrib-github-auth/back
+  cd taiga-contrib-google-auth/back
   workon taiga
   pip install -e .
 ```
@@ -66,7 +68,7 @@ Clone the repo and
 Modify `taiga-back/settings/local.py` and include the line:
 
 ```python
-  INSTALLED_APPS += ["taiga_contrib_github_auth"]
+  INSTALLED_APPS += ["taiga-contrib-google-auth"]
 
   # Get these from https://github.com/settings/developers
   GITHUB_API_CLIENT_ID = "YOUR-GITHUB-CLIENT-ID"
@@ -84,7 +86,7 @@ After clone the repo link `dist` in `taiga-front` plugins directory:
   ln -s ../../../taiga-contrib-github-auth/dist github-auth
 ```
 
-Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/github-auth/github-auth.json"`:
+Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/google-auth/google-auth.json"`:
 
 ```json
 ...
@@ -96,7 +98,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 ...
 ```
 
-In the plugin source dir `taiga-contrib-github-auth/front` run
+In the plugin source dir `taiga-contrib-google-auth/front` run
 
 ```bash
 npm install
@@ -117,4 +119,3 @@ PYTHONPATH environment variable, and run py.test, for example:
   add2virtualenv /home/taiga/taiga-back/
   py.test
 ```
-
