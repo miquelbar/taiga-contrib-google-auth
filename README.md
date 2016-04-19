@@ -1,10 +1,7 @@
-Taiga contrib github auth
+Taiga contrib google auth
 =========================
 
-![Kaleidos Project](http://kaleidos.net/static/img/badge.png "Kaleidos Project")
-[![Managed with Taiga.io](https://taiga.io/media/support/attachments/article-22/banner-gh.png)](https://taiga.io "Managed with Taiga.io")
-
-The Taiga plugin for github authentication.
+The Taiga plugin for google authentication.
 
 Installation
 ------------
@@ -15,7 +12,7 @@ Installation
 In your Taiga back python virtualenv install the pip package `taiga-contrib-google-auth` with:
 
 ```bash
-  pip install taiga-contrib-github-auth
+  pip install taiga-contrib-google-auth
 ```
 
 Modify your `settings/local.py` and include the line:
@@ -70,9 +67,12 @@ Modify `taiga-back/settings/local.py` and include the line:
 ```python
   INSTALLED_APPS += ["taiga-contrib-google-auth"]
 
-  # Get these from https://github.com/settings/developers
-  GITHUB_API_CLIENT_ID = "YOUR-GITHUB-CLIENT-ID"
-  GITHUB_API_CLIENT_SECRET = "YOUR-GITHUB-CLIENT-SECRET"
+    # Get these from https://console.cloud.google.com/apis/credentials
+    CLIENT_ID = "GOOGLE_API_CLIENT_ID"
+    CLIENT_SECRET = "GOOGLE_API_CLIENT_SECRET"
+    REDIRECT_URI = "GOOGLE_API_REDIRECT_URI"
+    RESTRICT_LOGIN = "GOOGLE_RESTRICT_LOGIN"
+    ALLOW_DOMAIN = "GOOGLE_API_ALLOW_DOMAIN"
 ```
 
 #### Taiga Front
@@ -90,7 +90,6 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 
 ```json
 ...
-    "gitHubClientId": "YOUR-GITHUB-CLIENT-ID",
     "contribPlugins": [
         (...)
         "/plugins/google-auth/google-auth.json"
