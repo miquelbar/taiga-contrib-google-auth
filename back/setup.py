@@ -5,14 +5,14 @@ import os
 from setuptools import setup, find_packages
 
 setup(
-    name = 'taiga-contrib-google-auth',
+    name = 'taiga-contrib-google-auth2',
     version = ":versiontools:taiga_contrib_google_auth:",
     description = "The Taiga plugin for google authentication",
     long_description = "",
     keywords = 'taiga, google, auth, plugin',
     author = 'HanWool Lee',
     author_email = 'kudnya@gmail.com',
-    url = 'https://github.com/seyriz/taiga-contrib-google-auth',
+    url = 'https://github.com/seyriz/taiga-contrib-google-auth2',
     license = 'AGPL',
     include_package_data = True,
     packages = find_packages(),

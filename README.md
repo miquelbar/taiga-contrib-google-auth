@@ -9,16 +9,16 @@ Installation
 
 #### Taiga Back
 
-In your Taiga back python virtualenv install the pip package `taiga-contrib-google-auth` with:
+In your Taiga back python virtualenv install the pip package `taiga-contrib-google-auth2` with:
 
 ```bash
-  pip install taiga-contrib-google-auth
+  pip install taiga-contrib-google-auth2
 ```
 
 Modify your `settings/local.py` and include the line:
 
 ```python
-  INSTALLED_APPS += ["taiga-contrib-google-auth"]
+  INSTALLED_APPS += ["taiga-contrib-google-auth2"]
 
   # Get these from https://console.cloud.google.com/apis/credentials
   CLIENT_ID = "GOOGLE_API_CLIENT_ID"
@@ -30,13 +30,13 @@ Modify your `settings/local.py` and include the line:
 
 #### Taiga Front
 
-Download in your `dist/plugins/` directory of Taiga front the `taiga-contrib-google-auth` compiled code (you need subversion in your system):
+Download in your `dist/plugins/` directory of Taiga front the `taiga-contrib-google-auth2` compiled code (you need subversion in your system):
 
 ```bash
   cd dist/
   mkdir -p plugins
   cd plugins
-  svn export "https://github.com/seyriz/taiga-contrib-google-auth/tags/$(pip show taiga-contrib-google-auth | awk '/^Version: /{print $2}')/front/dist"  "google-auth"
+  svn export "https://github.com/seyriz/taiga-contrib-google-auth/tags/$(pip show taiga-contrib-google-auth2 | awk '/^Version: /{print $2}')/front/dist"  "google-auth"
 ```
 
 Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/google-auth/google-auth.json"`:
@@ -57,7 +57,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 Clone the repo and
 
 ```bash
-  cd taiga-contrib-google-auth/back
+  cd taiga-contrib-google-auth2/back
   workon taiga
   pip install -e .
 ```
@@ -65,7 +65,7 @@ Clone the repo and
 Modify `taiga-back/settings/local.py` and include the line:
 
 ```python
-  INSTALLED_APPS += ["taiga-contrib-google-auth"]
+  INSTALLED_APPS += ["taiga-contrib-google-auth2"]
 
     # Get these from https://console.cloud.google.com/apis/credentials
     CLIENT_ID = "GOOGLE_API_CLIENT_ID"
@@ -83,7 +83,7 @@ After clone the repo link `dist` in `taiga-front` plugins directory:
   cd taiga-front/dist
   mkdir -p plugins
   cd plugins
-  ln -s ../../../taiga-contrib-google-auth/dist google-auth
+  ln -s ../../../taiga-contrib-google-auth2/dist google-auth
 ```
 
 Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/google-auth/google-auth.json"`:
@@ -97,7 +97,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 ...
 ```
 
-In the plugin source dir `taiga-contrib-google-auth/front` run
+In the plugin source dir `taiga-contrib-google-auth2/front` run
 
 ```bash
 npm install
