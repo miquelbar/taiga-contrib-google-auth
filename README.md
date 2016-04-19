@@ -83,7 +83,7 @@ After clone the repo link `dist` in `taiga-front` plugins directory:
   cd taiga-front/dist
   mkdir -p plugins
   cd plugins
-  ln -s ../../../taiga-contrib-github-auth/dist github-auth
+  ln -s ../../../taiga-contrib-google-auth/dist google-auth
 ```
 
 Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugins/google-auth/google-auth.json"`:
@@ -93,7 +93,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
     "gitHubClientId": "YOUR-GITHUB-CLIENT-ID",
     "contribPlugins": [
         (...)
-        "/plugins/github-auth/github-auth.json"
+        "/plugins/google-auth/google-auth.json"
     ]
 ...
 ```
