@@ -24,8 +24,8 @@ Modify your `settings/local.py` and include the line:
   CLIENT_ID = "GOOGLE_API_CLIENT_ID"
   CLIENT_SECRET = "GOOGLE_API_CLIENT_SECRET"
   REDIRECT_URI = "GOOGLE_API_REDIRECT_URI"
-  RESTRICT_LOGIN = "GOOGLE_RESTRICT_LOGIN"
-  ALLOW_DOMAIN = "GOOGLE_API_ALLOW_DOMAIN"
+  RESTRICT_LOGIN = ["GOOGLE_RESTRICT_LOGIN"]
+  ALLOW_DOMAIN = ["GOOGLE_API_ALLOW_DOMAIN"]
 ```
 
 #### Taiga Front
@@ -43,6 +43,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 
 ```json
 ...
+    "googleClientId": "GOOGLE_API_CLIENT_ID",
     "contribPlugins": [
         (...)
         "/plugins/google-auth/google-auth.json"
@@ -90,6 +91,7 @@ Include in your `dist/conf.json` in the 'contribPlugins' list the value `"/plugi
 
 ```json
 ...
+    "googleClientId": "GOOGLE_API_CLIENT_ID",
     "contribPlugins": [
         (...)
         "/plugins/google-auth/google-auth.json"

@@ -12,7 +12,7 @@ setup(
     keywords = 'taiga, google, auth, plugin',
     author = 'HanWool Lee',
     author_email = 'kudnya@gmail.com',
-    url = 'https://github.com/seyriz/taiga-contrib-google-auth2',
+    url = 'https://github.com/seyriz/taiga-contrib-google-auth',
     license = 'AGPL',
     include_package_data = True,
     packages = find_packages(),
