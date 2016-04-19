@@ -1,0 +1,31 @@
+{
+  "name": "taiga-contrib-github-auth",
+  "version": "0.0.1",
+  "description": "Taiga contrib plugin for google authentication",
+  "main": "index.js",
+  "scripts": {
+    "build-jade": "node_modules/jade/bin/jade.js partials/contrib/google_auth.jade -o dist/",
+    "build-coffee": "cat coffee/google_auth.coffee dist/google_auth.html | node_modules/coffee-script/bin/coffee --compile --stdio > dist/google_auth.js",
+    "build": "npm run build-jade; npm run build-coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taigaio/taiga-contrib-github-auth"
+  },
+  "keywords": [
+    "google",
+    "taiga",
+    "authentication",
+    "plugin"
+  ],
+  "author": "HanWool Lee <kudnya@gmail.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/taigaio/taiga-contrib-github-auth/issues"
+  },
+  "homepage": "https://github.com/taigaio/taiga-contrib-github-auth",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "jade": "^1.9.1"
+  }
+}
