@@ -1,0 +1,9 @@
+{
+    "name": "Google Auth",
+    "slug": "google-auth",
+    "description": "Authenticate with Google accounts.",
+    "type": "auth",
+    "module": "taigaContrib.googleAuth",
+    "template": "/plugins/google-auth/google-auth.html",
+    "js": "/plugins/google-auth/googgle-auth.js"
+}
