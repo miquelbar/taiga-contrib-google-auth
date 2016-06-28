@@ -18,7 +18,7 @@ In your Taiga back python virtualenv install the pip package `taiga-contrib-goog
 Modify your `settings/local.py` and include the line:
 
 ```python
-  INSTALLED_APPS += ["taiga-contrib-google-auth2"]
+  INSTALLED_APPS += ["taiga_contrib_google_auth"]
 
   # Get these from https://console.cloud.google.com/apis/credentials
   CLIENT_ID = "GOOGLE_API_CLIENT_ID"
