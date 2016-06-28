@@ -25,4 +25,4 @@ class TaigaContribGithubAuthAppConfig(AppConfig):
     def ready(self):
         from taiga.auth.services import register_auth_plugin
         from . import services
-        register_auth_plugin("github", services.github_login_func)
+        register_auth_plugin("google", services.google_login_func)
