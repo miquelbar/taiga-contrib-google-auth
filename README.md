@@ -66,7 +66,7 @@ Clone the repo and
 Modify `taiga-back/settings/local.py` and include the line:
 
 ```python
-  INSTALLED_APPS += ["taiga-contrib-google-auth2"]
+  INSTALLED_APPS += ["taiga_contrib_google_auth"]
 
     # Get these from https://console.cloud.google.com/apis/credentials
     CLIENT_ID = "GOOGLE_API_CLIENT_ID"
